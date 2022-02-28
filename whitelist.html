@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Apply Whitelist</title>
+		<link rel="icon" href="./img/logo.png" />
+		<link href="css/minecraft.css" rel="stylesheet">
+		<script>
+			function httpGet(theUrl) {
+				var xmlHttp = new XMLHttpRequest();
+				xmlHttp.open("GET", theUrl, false);
+				xmlHttp.send(null);
+				return xmlHttp.responseText;
+			}
+		</script>
+		<style>
+		       .background {
+		            margin: 0 auto;
+		            padding-top: 56px;
+		        }
+		
+		        body {
+		            margin: 0;
+		            background: #eee;
+		        }
+
+			.card {
+				box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+				background: #fff;
+				margin: 10px;
+				padding: 10px;
+			}
+
+			.title {
+				font-size: 14px;
+				color: #424242;
+			}
+
+			input {
+				border: none;
+				border-bottom: solid;
+				border-bottom-width: 1px;
+				margin-top: 5px;
+				width: 100%;
+				height: 25px;
+				outline: none;
+			}
+
+			input:focus {
+				outline: none;
+				border-color: #35ae2f;
+				border-bottom-color: #35ae2f;
+			}
+
+			textarea {
+				border: none;
+				border-bottom: solid;
+				border-bottom-width: 1px;
+				margin-top: 5px;
+				width: 100%;
+				height: 200px;
+				outline: none;
+			}
+
+			textarea:focus {
+				outline: none;
+				border-color: #35ae2f;
+				border-bottom-color: #35ae2f;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="content background container">
+			<h1 class="m-1">Apply Whitelist</h1>
+			<div class="card">
+				<p>1.When Minecraft released?<br />
+					A.1999<br />
+					B.2007<br />
+					C.2009<br />
+					D.2022</p>
+				<p>2.Which company Minecraft belonging to?<br />
+					A.MojangAB<br />
+					B.Microsoft<br />
+					C.Google<br />
+					D.Netease</p>
+				<p>3.You can't get Minecraft from which platform below?<br />
+					A.Steam<br />
+					B.Appstore<br />
+					C.MicrosoftStore<br />
+					D.Google Play</p>
+				<p>4.Which of the following is not a hostile creature？<br />
+					A.Wither Skeleton<br />
+					B.Zombie<br />
+					C.Iron Golem<br />
+					D.Creeper</p>
+				<p>5.Which of the following structures appeared first?<br />
+					A.Jungle-Pyramid<br />
+					B.Mansion<br />
+					C.Ocean Monument<br />
+					D.Igloo</p>
+				<p>6.Which of the following tools is the fastest to dig?<br />
+					A.Iron Pickaxe<br />
+					B.Stone Pickaxe<br />
+					C.Diamond Pickaxe<br />
+					D.Golden Pickaxe</p>
+				<p>7.Which defense system has the best defense effect on the enraged Enderman?<br />
+					A.Island on the lava<br />
+					B.Cactus three layers of defense<br />
+					C.Obsidian bunker<br />
+					D.Battle in the rain</p>
+				<p>8.Write the code for garbled text of Minecraft game.</p>
+				<p>9.Write the blank with the best height (axis y)to dig diamonds.(The error does not exceed 10)</p>
+				<p>10.Write the blank with the item which is made of five Glasses,one Nether star and three Obsidians in
+					the
+					crafting table.</p>
+			</div>
+			<div class="card">
+				<div class="title">Player's Name and Contact details</div>
+				<input type="text" id="title" />
+			</div>
+			<div class="card">
+				<div class="title">Answer</div>
+				<textarea type="text" id="content" /></textarea>
+			</div>
+			<div align="center">
+				<button class="btn btn-primary"
+					onclick="alert(httpGet('send.php?title='+document.getElementById('title').value+'&content='+document.getElementById('content').value))">确定</button>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		document.oncontextmenu = new Function("event.returnValue=false;");
+		document.onkeydown = function() {
+			//禁止 ctrl+u
+			if (event.ctrlKey && window.event.keyCode == 85) {
+				return false;
+			}
+			//禁止 F12
+			if (window.event && window.event.keyCode == 123) {
+				event.keyCode = 0;
+				event.returnValue = false;
+			}
+		}
+	</script>
+</html>
